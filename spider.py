@@ -25,4 +25,8 @@ def get_gzrc_info():
 
     return
 
+def get_gzpta_info():
+
+    return
+
 
