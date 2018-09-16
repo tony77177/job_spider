@@ -12,4 +12,17 @@ import time
 
 def get_163gz_info():
 
+
     return
+
+
+def get_gyrc_info():
+
+    return
+
+
+def get_gzrc_info():
+
+    return
+
+
