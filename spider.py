@@ -5,28 +5,76 @@
 #   内容增加测试
 #
 
+from urllib import request
+import requests
+import re
 import json
 import time
 
 
+#    获取目标信息
+def get_target_info(url, encoding, pattern):
+    headers = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "Connection": "close",
+        "Upgrade-Insecure-Requests": "1",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
+    }
+    responses = requests.get(url, headers)
+    responses.encoding = encoding
 
-def get_163gz_info():
+    result = re.findall(re.compile(pattern), responses.text)
 
-
-    return
-
-
-def get_gyrc_info():
-
-    return
-
-
-def get_gzrc_info():
-
-    return
-
-def get_gzpta_info():
-
-    return
+    return result
 
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15"
+}
+
+url = 'http://www.163gz.com/js/163.html'
+
+# req = request.Request(url, headers=headers)
+
+# response = request.urlopen(req, timeout=3)
+
+# print(response.read().decode('gb2312','ignore'))
+#
+# responses = requests.get(url)
+#
+# responses.encoding = 'gb2312'  # 解决中文乱码问题，根据网站本身编码填入相应编码代码
+#
+# print(responses.text)
+#
+# print('\r准备开始匹配：\r')
+#
+# #  正文利用正则表达式进行匹配
+# # pattern = re.compile(r'<p.*?class=\"STYLE4\".*?>.*?<\/p>',re.S)     #用于匹配招聘信息内容的正则表达式
+# # results = re.findall(pattern,responses.text)
+#
+# pattern_02 = re.compile('<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
+# results_02 = re.findall(pattern_02, responses.text)
+#
+# # print(results)
+#
+# print('\r匹配结束。\r')
+#
+# print(results_02)
+#
+# print('\r开始准备提取结果：\r')
+#
+
+gyrc_url = 'http://www.gyrc.cn/wzqt/xxzx/xxzx/xxzxsyCx?pageSize=10000&pageNum=0'
+
+responses = requests.get(gyrc_url, headers)
+
+print(responses.text)
+
+# result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
+#
+# for item in result:
+#     # url,name = result
+#     print('发布日期：%s，新闻标题：%s，新闻链接：%s' % (item[0], item[2], item[1]))
+#     # print('\n')
