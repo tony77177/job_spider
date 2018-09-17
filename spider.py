@@ -99,8 +99,8 @@ for item in result:
     if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
         title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
         cur_time = re.sub(' ・', '', item[0])
-        cursor.execute(
-            'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1],time.strftime("%Y-%m-%d %H:%M:%S"),"163gz.com")')
+        curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
+        cursor.execute('INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1],curr_time,"163gz.com")')
         print(
             '%s,%s,%s' % (cur_time, title, item[1]))
     # print('\n')
