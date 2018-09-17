@@ -11,6 +11,9 @@
 from urllib import request
 import requests
 import re
+
+import pymysql
+
 import json
 import time
 
@@ -33,9 +36,9 @@ def get_target_info(url, encoding, pattern):
     return result
 
 
-headers = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15"
-}
+# headers = {
+#     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/11.1.2 Safari/605.1.15"
+# }
 
 url = 'http://www.163gz.com/js/163.html'
 
@@ -75,9 +78,34 @@ url = 'http://www.163gz.com/js/163.html'
 #
 # print(responses.text)
 
+
+# 一、创建数据库对象connection
+conn = pymysql.connect(
+    host='localhost',
+    user='job',
+    passwd='xdjyf7CuloKwZTqJ',
+    charset='utf8'
+)
+# 二、创建数据库数据承载对象--获取游标对象cursor
+cursor = conn.cursor()
+
+# 2.选择数据库
+conn.select_db('job')
+
 result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
 
 for item in result:
     # url,name = result
-    print('发布日期：%s，新闻标题：%s，新闻链接：%s' % (item[0], item[2], item[1]))
+    if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
+        title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]));
+
+        cursor.execute('INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1]),"男","163gz.com")')
+        print(
+            '%s,%s,%s' % (re.sub(' ・', '', item[0]), title, item[1]))
     # print('\n')
+
+# 三、关闭游标
+cursor.close()
+
+# 四、关闭对象
+conn.close()
