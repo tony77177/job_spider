@@ -110,7 +110,8 @@ for item in result:
 
 
     # print('\n')
-conn.commit()
+conn.commit()   # 数据提交，否则不生效
+
 print('结束获取信息！')
 
 # 三、关闭游标
