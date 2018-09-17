@@ -98,10 +98,11 @@ for item in result:
     # url,name = result
     if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
         title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]));
-
-        cursor.execute('INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1]),"男","163gz.com")')
+        cur_time = re.sub(' ・', '', item[0])
+        cursor.execute(
+            'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1]),time.strftime("%Y-%m-%d %H:%M:%S"),"163gz.com")')
         print(
-            '%s,%s,%s' % (re.sub(' ・', '', item[0]), title, item[1]))
+            '%s,%s,%s' % (cur_time, title, item[1]))
     # print('\n')
 
 # 三、关闭游标
