@@ -100,7 +100,7 @@ for item in result:
         title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]));
         cur_time = re.sub(' ・', '', item[0])
         cursor.execute(
-            'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1]),time.strftime("%Y-%m-%d %H:%M:%S"),"163gz.com")')
+            'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1],time.strftime("%Y-%m-%d %H:%M:%S"),"163gz.com")')
         print(
             '%s,%s,%s' % (cur_time, title, item[1]))
     # print('\n')
