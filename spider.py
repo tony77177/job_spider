@@ -102,7 +102,7 @@ for item in result:
         news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
         cur_time = re.sub(' ・', '', item[0])
         curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
-        print('%s,%s,%s' % (cur_time, title, item[1]))
+        print('%s,%s,%s' % (cur_time, news_title, item[1]))
         insert_sql = 'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(' + news_title + ',' + item[
             1] + ',' + curr_time + ',"163gz.com")'
         print(insert_sql)
