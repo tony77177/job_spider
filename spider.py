@@ -1,3 +1,6 @@
+#!usr/bin/python
+
+
 #   爬虫主文件
 #   作者：赵昱
 #   时间：2018-09-16 17:48:32
@@ -66,15 +69,15 @@ url = 'http://www.163gz.com/js/163.html'
 # print('\r开始准备提取结果：\r')
 #
 
-gyrc_url = 'http://www.gyrc.cn/wzqt/xxzx/xxzx/xxzxsyCx?pageSize=10000&pageNum=0'
-
-responses = requests.get(gyrc_url, headers)
-
-print(responses.text)
-
-# result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
+# gyrc_url = 'http://www.gyrc.cn/wzqt/xxzx/xxzx/xxzxsyCx?pageSize=10000&pageNum=0'
 #
-# for item in result:
-#     # url,name = result
-#     print('发布日期：%s，新闻标题：%s，新闻链接：%s' % (item[0], item[2], item[1]))
-#     # print('\n')
+# responses = requests.get(gyrc_url, headers)
+#
+# print(responses.text)
+
+result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
+
+for item in result:
+    # url,name = result
+    print('发布日期：%s，新闻标题：%s，新闻链接：%s' % (item[0], item[2], item[1]))
+    # print('\n')
