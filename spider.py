@@ -94,17 +94,22 @@ conn.select_db('job')
 
 result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
 
+print('开始获取信息：')
+
 for item in result:
     # url,name = result
     if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
         title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
         cur_time = re.sub(' ・', '', item[0])
         curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
-        print(
-            '%s,%s,%s' % (cur_time, title, item[1]))
-        cursor.execute('INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1],curr_time,"163gz.com")')
+        print('%s,%s,%s' % (cur_time, title, item[1]))
+        insert_sql = 'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES(title,item[1],curr_time,"163gz.com")'
+        print(insert_sql)
+        cursor.execute(insert_sql)
 
     # print('\n')
+
+print('结束获取信息！')
 
 # 三、关闭游标
 cursor.close()
