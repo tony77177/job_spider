@@ -108,8 +108,9 @@ for item in result:
         print(insert_sql)
         cursor.execute(insert_sql)
 
-    # print('\n')
 
+    # print('\n')
+conn.commit()
 print('结束获取信息！')
 
 # 三、关闭游标
