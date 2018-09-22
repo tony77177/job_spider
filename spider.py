@@ -84,7 +84,7 @@ url = 'http://www.163gz.com/js/163.html'
 #
 #    设置日志模块
 #
-LOG_FILE = r'spider.log'
+LOG_FILE = r'./spider.log'
 
 handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=5,
                                                encoding='utf-8')  # 实例化handler
