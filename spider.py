@@ -31,6 +31,8 @@ def get_target_info(url, encoding, pattern):
     responses = requests.get(url, headers)
     responses.encoding = encoding
 
+    # print(responses.content)
+
     result = re.findall(re.compile(pattern), responses.text)
 
     return result
@@ -92,30 +94,73 @@ cursor = conn.cursor()
 # 2.选择数据库
 conn.select_db('job')
 
-result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a><br />')
+result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)</a>')
+
+# exit()
+
+# print(check_result[0])
 
 print('开始获取信息：')
 
-for item in result:
-    # url,name = result
-    if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
-        news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
-        cur_time = re.sub(' ・', '', item[0])
-        curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
-        print('%s,%s,%s' % (cur_time, news_title, item[1]))
-        insert_sql = 'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES("' + news_title + '","' + item[
-            1] + '","' + curr_time + '","163gz.com")'
-        print(insert_sql)
-        cursor.execute(insert_sql)
+# 获取数据条数
+total_num = 0
 
 
-    # print('\n')
-conn.commit()   # 数据提交，否则不生效
+#   验证数据是否重复的SQL
+check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + result[0][1] + "'"
 
-print('结束获取信息！')
+# print(check_sql)
+
+# exit()
+
+cursor.execute(check_sql)
+# check_result = []
+
+check_result = cursor.fetchone()
+
+# print(check_result)
+
+#   广告数
+ad_num = 0
+
+#  防止结果为空，进行过滤
+if check_result[0] == 0:
+    for item in result:
+        if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
+            news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
+            cur_time = re.sub(' ・', '', item[0])
+            curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
+            # print('%s,%s,%s' % (cur_time, news_title, item[1]))
+            insert_sql = 'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES("' + news_title + '","' + item[
+                1] + '","' + curr_time + '","163gz.com")'
+            # print(insert_sql)
+            total_num += 1
+            cursor.execute(insert_sql)
+        else:
+            ad_num += 1
+            # print('广告信息：%s,%s,%s' % (cur_time, news_title, item[1]))
+
+# for i=0
+#
+# print('倒序之后结果：')
+# print(result.reverse())
+
+# exit()
+
+
+# print('\n')
+
+# 如果数据不为空，则进行数据提交
+if (total_num != 0):
+    conn.commit()  #  数据提交，否则不生效
+
+print('结束获取信息，共计获取：%s 条，广告共计：%s条' % (total_num, ad_num))
 
 # 三、关闭游标
 cursor.close()
 
 # 四、关闭对象
 conn.close()
+
+# if __name__ == '__init__':
+#     print('hello world')
