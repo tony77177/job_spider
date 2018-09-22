@@ -14,7 +14,7 @@ import re
 
 import pymysql
 
-import json
+import logging.handlers
 import time
 
 
@@ -81,6 +81,22 @@ url = 'http://www.163gz.com/js/163.html'
 # print(responses.text)
 
 
+#
+#    设置日志模块
+#
+LOG_FILE = r'spider.log'
+
+handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=5,
+                                               encoding='utf-8')  # 实例化handler
+fmt = '%(asctime)s - %(levelname)s - %(message)s'
+
+formatter = logging.Formatter(fmt)  # 实例化formatter
+handler.setFormatter(formatter)  # 为handler添加formatter
+
+logger = logging.getLogger('spider')  # 获取名为spider的logger
+logger.addHandler(handler)  # 为logger添加handler
+logger.setLevel(logging.DEBUG)
+
 # 一、创建数据库对象connection
 conn = pymysql.connect(
     host='localhost',
@@ -100,11 +116,12 @@ result = get_target_info(url, 'gb2312', '<br />\r\n(.*?)<a href="(.*?)".*?>(.*?)
 
 # print(check_result[0])
 
-print('开始获取信息：')
+logger.info(u'开始获取信息：')
+# logger.debug('first debug message')
+# print('开始获取信息：')
 
 # 获取数据条数
 total_num = 0
-
 
 #   验证数据是否重复的SQL
 check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + result[0][1] + "'"
@@ -154,7 +171,8 @@ if check_result[0] == 0:
 if (total_num != 0):
     conn.commit()  #  数据提交，否则不生效
 
-print('结束获取信息，共计获取：%s 条，广告共计：%s条' % (total_num, ad_num))
+logger.info(u'结束获取信息，共计获取：%s 条，广告共计：%s条' % (total_num, ad_num))
+
 
 # 三、关闭游标
 cursor.close()
