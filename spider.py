@@ -17,6 +17,8 @@ import pymysql
 import logging.handlers
 import time
 
+import os
+
 
 #    获取目标信息
 def get_target_info(url, encoding, pattern):
@@ -84,7 +86,7 @@ url = 'http://www.163gz.com/js/163.html'
 #
 #    设置日志模块
 #
-LOG_FILE = r'./spider.log'
+LOG_FILE = os.path.abspath('.') + '/spider.log'
 
 handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=5,
                                                encoding='utf-8')  # 实例化handler
