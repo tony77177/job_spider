@@ -124,25 +124,19 @@ logger.info(u'开始获取信息：')
 total_num = 0
 
 #   验证数据是否重复的SQL
-check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + result[0][1] + "'"
 
-# print(check_sql)
-
-# exit()
-
-cursor.execute(check_sql)
-# check_result = []
-
-check_result = cursor.fetchone()
 
 # print(check_result)
-
+num = 0
 #   广告数
 ad_num = 0
 
-#  防止结果为空，进行过滤
-if check_result[0] == 0:
-    for item in result:
+for item in result:
+    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + item[1] + "'"
+    cursor.execute(check_sql)
+    check_result = cursor.fetchone()
+    num += 1
+    if check_result[0] == 0:
         if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
             news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
             cur_time = re.sub(' ・', '', item[0])
@@ -156,6 +150,25 @@ if check_result[0] == 0:
         else:
             ad_num += 1
             # print('广告信息：%s,%s,%s' % (cur_time, news_title, item[1]))
+    else:
+        break
+
+#  防止结果为空，进行过滤
+# if check_result[0] == 0:
+#     for item in result:
+#         if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
+#             news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
+#             cur_time = re.sub(' ・', '', item[0])
+#             curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
+#             # print('%s,%s,%s' % (cur_time, news_title, item[1]))
+#             insert_sql = 'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES("' + news_title + '","' + item[
+#                 1] + '","' + curr_time + '","163gz.com")'
+#             # print(insert_sql)
+#             total_num += 1
+#             cursor.execute(insert_sql)
+#         else:
+#             ad_num += 1
+# print('广告信息：%s,%s,%s' % (cur_time, news_title, item[1]))
 
 # for i=0
 #
@@ -173,6 +186,7 @@ if (total_num != 0):
 
 logger.info(u'结束获取信息，共计获取：%s 条，广告共计：%s条' % (total_num, ad_num))
 
+logger.info(u'for执行次数：%s' % (num))
 
 # 三、关闭游标
 cursor.close()
