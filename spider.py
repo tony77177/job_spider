@@ -85,7 +85,7 @@ url = 'http://www.163gz.com/js/163.html'
 #    设置日志模块
 #
 LOG_FILE = r'./spider.log'  #  本地缓解经
-#LOG_FILE = r'/root/job_spider/job_spider/spider.log'    #线上环境
+# LOG_FILE = r'/root/job_spider/job_spider/spider.log'    #线上环境
 
 handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=5,
                                                encoding='utf-8')  # 实例化handler
@@ -134,9 +134,10 @@ ad_num = 0
 
 for item in result:
 
-    news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
+    target_time = re.sub(' ・', '', item[0])  #  页面获取的时间
 
-    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE title='" + news_title + "'"
+    #  判断重复逻辑更改为：1、URL是否存在；2、信息在原网站发布时间是否重复
+    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + item[1] + "' AND target_dt='" + target_time + "'"
 
     logger.info(u'check_sql_info：%s' % (check_sql))
 
@@ -148,11 +149,13 @@ for item in result:
 
     if check_result[0] == 0:
         if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
-            cur_time = re.sub(' ・', '', item[0])
+            news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
+
             curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
             # print('%s,%s,%s' % (cur_time, news_title, item[1]))
-            insert_sql = 'INSERT INTO t_info(title,url,insert_dt,from_src) VALUES("' + news_title + '","' + item[
-                1] + '","' + curr_time + '","163gz.com")'
+            insert_sql = 'INSERT INTO t_info(title,url,target_dt,insert_dt,from_src) VALUES("' + news_title + '","' + \
+                         item[
+                             1] + '","' + target_time + '","' + curr_time + '","163gz.com")'
             # print(insert_sql)
             total_num += 1
             cursor.execute(insert_sql)
