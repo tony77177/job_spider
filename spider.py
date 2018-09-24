@@ -133,7 +133,10 @@ num = 0
 ad_num = 0
 
 for item in result:
-    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE title='" + item[1] + "'"
+
+    news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
+
+    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE title='" + news_title + "'"
 
     logger.info(u'check_sql_info：%s' % (check_sql))
 
@@ -145,7 +148,6 @@ for item in result:
 
     if check_result[0] == 0:
         if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
-            news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
             cur_time = re.sub(' ・', '', item[0])
             curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
             # print('%s,%s,%s' % (cur_time, news_title, item[1]))
