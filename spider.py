@@ -85,7 +85,7 @@ url = 'http://www.163gz.com/js/163.html'
 #    设置日志模块
 #
 LOG_FILE = r'./spider.log'  #  本地缓解经
-# LOG_FILE = r'/root/job_spider/job_spider/spider.log'    #线上环境
+#LOG_FILE = r'/root/job_spider/job_spider/spider.log'    #线上环境
 
 handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=5,
                                                encoding='utf-8')  # 实例化handler
@@ -133,7 +133,7 @@ num = 0
 ad_num = 0
 
 for item in result:
-    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + item[1] + "'"
+    check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE title='" + item[1] + "'"
 
     logger.info(u'check_sql_info：%s' % (check_sql))
 
