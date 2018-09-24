@@ -84,8 +84,8 @@ url = 'http://www.163gz.com/js/163.html'
 #
 #    设置日志模块
 #
-LOG_FILE = r'./spider.log'  # 本地缓解经
-#LOG_FILE = r'/root/job_spider/job_spider/spider.log'    #线上环境
+LOG_FILE = r'./spider.log'  #  本地缓解经
+# LOG_FILE = r'/root/job_spider/job_spider/spider.log'    #线上环境
 
 handler = logging.handlers.RotatingFileHandler(LOG_FILE, maxBytes=1024 * 1024, backupCount=5,
                                                encoding='utf-8')  # 实例化handler
@@ -134,9 +134,15 @@ ad_num = 0
 
 for item in result:
     check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + item[1] + "'"
+
+    logger.info(u'check_sql_info：%s' % (check_sql))
+
     cursor.execute(check_sql)
     check_result = cursor.fetchone()
     num += 1
+
+    logger.info(u'check_sql_result：%s' % (check_result[0]))
+
     if check_result[0] == 0:
         if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
             news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
