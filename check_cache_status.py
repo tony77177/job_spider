@@ -38,8 +38,9 @@ cache_path = '/var/www/findthejob/job/job/application/cache/cache_info_list'
 file_path = '/root/job_spider/job_spider/check_cache.log'
 f = open(file_path, 'r+')
 curr_num = f.read()
-# print('read : ', type(content))  #
 
+
+#  判断逻辑，当数据条数大于缓存条数时，执行缓存文件删除操作
 if (check_result[0] > int(curr_num)):
     f.seek(0, 0)
     f.write(str(check_result[0]))
