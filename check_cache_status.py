@@ -28,10 +28,7 @@ conn.select_db('job')
 get_num_sql = "SELECT COUNT(*) AS num FROM t_info"
 cursor.execute(get_num_sql)
 check_result = cursor.fetchone()
-# print((check_result[0]))
 
-
-# check_result[0] = 100
 
 #  进行文件读取，获取上一次存取的条数
 cache_path = '/var/www/findthejob/job/job/application/cache/cache_info_list'

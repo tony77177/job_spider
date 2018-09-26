@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71b2a37e-628c-4e5a-8b25-1039e5333413" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/check_cache_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/check_cache_status.py" afterDir="false" />
-    </list>
+    <list default="true" id="71b2a37e-628c-4e5a-8b25-1039e5333413" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +20,8 @@
       <file leaf-file-name="check_cache_status.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_cache_status.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="255">
+              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
               <folding>
                 <element signature="e#216#230#0" expanded="true" />
               </folding>
@@ -34,7 +32,7 @@
       <file leaf-file-name="gyrc_info.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gyrc_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
+            <state relative-caret-position="731">
               <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
               <folding>
                 <element signature="e#84#110#0" expanded="true" />
@@ -99,6 +97,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,7 +109,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -269,13 +267,33 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/check_cache_status.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding>
+            <element signature="e#216#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gyrc_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
+          <folding>
+            <element signature="e#84#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="10" selection-end-line="210" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -300,9 +318,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
           <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -313,9 +328,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -323,9 +335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -333,9 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -343,9 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="37" selection-start-line="94" selection-start-column="37" selection-end-line="94" selection-end-column="37" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -353,9 +356,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
           <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -363,9 +363,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1904">
           <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -373,9 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="11" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="11" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -453,9 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding>
-            <marker date="1537766174614" expanded="true" signature="1274:1778" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -471,7 +462,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gyrc_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
+        <state relative-caret-position="731">
           <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
           <folding>
             <element signature="e#84#110#0" expanded="true" />
@@ -481,8 +472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_cache_status.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="255">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding>
             <element signature="e#216#230#0" expanded="true" />
           </folding>
