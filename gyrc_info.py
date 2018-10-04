@@ -105,13 +105,13 @@ for item in result_info:
     #  判断重复逻辑更改为：1、URL是否存在；2、信息在原网站发布时间是否重复
     check_sql = "SELECT COUNT(*) AS num FROM t_info WHERE url='" + new_url + "' AND target_dt='" + target_time + "'"
 
-    logger.info(u'check_sql_info：%s' % (check_sql))
+    # logger.info(u'check_sql_info：%s' % (check_sql))
 
     cursor.execute(check_sql)
     check_result = cursor.fetchone()
     num += 1
 
-    logger.info(u'check_sql_result：%s' % (check_result[0]))
+    # logger.info(u'check_sql_result：%s' % (check_result[0]))
 
     if check_result[0] == 0:
         news_title = item['title']

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71b2a37e-628c-4e5a-8b25-1039e5333413" name="Default" comment="" />
+    <list default="true" id="71b2a37e-628c-4e5a-8b25-1039e5333413" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gyrc_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/gyrc_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/spider.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="check_cache_status.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="check_cache_status.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/check_cache_status.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+            <state relative-caret-position="218">
+              <caret line="33" column="76" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
               <folding>
                 <element signature="e#216#230#0" expanded="true" />
               </folding>
@@ -32,10 +36,22 @@
       <file leaf-file-name="gyrc_info.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gyrc_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
+            <state relative-caret-position="445">
+              <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
               <folding>
                 <element signature="e#84#110#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+              <folding>
+                <element signature="e#120#146#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,10 +86,10 @@
       <list>
         <option value="$PROJECT_DIR$/../test1/get_data.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/spider.py" />
-        <option value="$PROJECT_DIR$/gyrc_info.py" />
         <option value="$PROJECT_DIR$/spider.log" />
         <option value="$PROJECT_DIR$/check_cache_status.py" />
+        <option value="$PROJECT_DIR$/gyrc_info.py" />
+        <option value="$PROJECT_DIR$/spider.py" />
       </list>
     </option>
   </component>
@@ -97,7 +113,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,6 +124,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -267,6 +283,52 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/check_cache_status.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="76" lean-forward="true" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
+          <folding>
+            <element signature="e#216#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gyrc_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
+          <folding>
+            <element signature="e#84#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_cache_status.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#216#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gyrc_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
+          <folding>
+            <element signature="e#84#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/check_cache_status.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -443,13 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider.log">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -460,22 +515,32 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/check_cache_status.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="33" column="76" selection-start-line="33" selection-start-column="76" selection-end-line="33" selection-end-column="76" />
+          <folding>
+            <element signature="e#216#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gyrc_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="54" />
+        <state relative-caret-position="445">
+          <caret line="137" lean-forward="true" selection-start-line="137" selection-end-line="137" />
           <folding>
             <element signature="e#84#110#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check_cache_status.py">
+    <entry file="file://$PROJECT_DIR$/spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        <state relative-caret-position="357">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
           <folding>
-            <element signature="e#216#230#0" expanded="true" />
+            <element signature="e#120#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
