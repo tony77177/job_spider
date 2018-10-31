@@ -150,13 +150,12 @@ for item in result:
     if check_result[0] == 0:
         if ('163gz.com' in item[1]):  #  判断链接是否为163GZ.COM，否则为广告
             news_title = re.sub('</font>', '', re.sub('<font.*?>', '', item[2]))
+            news_title = re.sub('"','',news_title)  #过滤双引号
 
             curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
             # print('%s,%s,%s' % (cur_time, news_title, item[1]))
-            insert_sql = 'INSERT INTO t_info(title,url,target_dt,insert_dt,from_src) VALUES("' + news_title + '","' + \
-                         item[
-                             1] + '","' + target_time + '","' + curr_time + '","163gz.com")'
-            # print(insert_sql)
+            insert_sql = 'INSERT INTO t_info(title,url,target_dt,insert_dt,from_src) VALUES("' + news_title + '","' + item[1] + '","' + target_time + '","' + curr_time + '","163gz.com")'
+            print(insert_sql)
             total_num += 1
             cursor.execute(insert_sql)
         else:
