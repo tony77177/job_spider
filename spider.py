@@ -155,7 +155,7 @@ for item in result:
             curr_time = time.strftime("%Y-%m-%d %H:%M:%S")
             # print('%s,%s,%s' % (cur_time, news_title, item[1]))
             insert_sql = 'INSERT INTO t_info(title,url,target_dt,insert_dt,from_src) VALUES("' + news_title + '","' + item[1] + '","' + target_time + '","' + curr_time + '","163gz.com")'
-            print(insert_sql)
+            # print(insert_sql)
             total_num += 1
             cursor.execute(insert_sql)
         else:
